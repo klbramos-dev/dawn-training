@@ -1,0 +1,106 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .banner-img-short {
+    background: url({{ section.settings.banner-img | image_url: height: section.settings.banner-height | plus: 100 }}) no-repeat center / cover;
+    text-align: {{ section.settings.text-align }};
+    height: calc({{section.settings.banner-height}}+100)px;
+  }
+
+  .banner-img-short h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    color: {{ section.settings.heading-color }}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .banner-img-short {
+    background: url({{ section.settings.banner-img | image_url: height: section.settings.banner-height }}) no-repeat center / cover;
+    text-align: {{ section.settings.text-align }};
+    height: {{section.settings.banner-height}}px;
+  }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding banner-img-short">
+  <div class="page-width">
+    <h2>{{ section.settings['banner-heading'] }}</h2>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Short image banner",
+  "class": "short-banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner-img",
+      "label": "Banner image"
+    },
+    {
+      "type": "range",
+      "id": "banner-height",
+      "min": 100,
+      "max": 450,
+      "step": 5,
+      "label": "Banner height",
+      "default": 300
+    },
+    {
+      "type": "text",
+      "id": "banner-heading",
+      "label": "Banner text"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text-align",
+      "label": "Text alignment",
+      "default": "left"
+    },
+    {
+      "type": "color",
+      "id": "heading-color",
+      "label": "Heading color"
+    },
+    {
+      "type": "header",
+      "content": "SECTION PADDING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 52
+    }
+  ],
+  "presets": [{ "name": "Short image banner" }]
+}
+{% endschema %}
