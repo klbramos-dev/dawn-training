@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
+    <meta name="custom" content="{{ template.name }} -- {{template.suffix }}">
     <link rel="canonical" href="{{ canonical_url }}">
 
     {%- if settings.favicon != blank -%}
@@ -294,11 +295,11 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% unless template.name == 'page' and template.suffix === 'eo-home' %}
+    {% if template.name == 'page' and template.suffix == 'eo-home' %}
       {% sections 'eo-header-group' %}
     {% else %}
       {% sections 'header-group' %}
-    {% endunless %}
+    {% endif %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
