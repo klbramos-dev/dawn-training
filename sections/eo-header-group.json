@@ -4,8 +4,6 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "color_scheme": "",
         "show_line_separator": true,
