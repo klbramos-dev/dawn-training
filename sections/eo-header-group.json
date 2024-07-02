@@ -1,6 +1,6 @@
 {
   "name": "Escape Outdoors Header",
-  "type": "header",
+  "type": "custom.header_eo",
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
