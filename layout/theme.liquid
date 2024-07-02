@@ -294,8 +294,11 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% comment %} {% sections 'header-group' %} {% endcomment %}
-    {% sections 'eo-header-group' %}
+    {% unless template.name == 'page' and template.suffix === 'eo-home' %}
+      {% sections 'eo-header-group' %}
+    {% else %}
+      {% sections 'header-group' %}
+    {% endunless %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
