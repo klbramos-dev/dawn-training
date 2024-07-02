@@ -1,0 +1,129 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "EO Custom Actions",
+  "class": "eo-custom-actions",
+  "enabled_on": {
+    "groups": ["eo-header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide-mobile",
+      "label": "Hide on mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "STYLING"
+    },
+    {
+      "type": "color",
+      "id": "background-color",
+      "label": "Background Color"
+    },
+    {
+      "type": "select",
+      "id": "actions-position",
+      "label": "Letter Spacing",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "actions-sizing",
+      "label": "Size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "header",
+      "content": "SECTION PADDING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 52
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "action",
+      "name": "Action",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "action-icon",
+          "label": "Action icon"
+        },
+        {
+          "type": "text",
+          "id": "action-name",
+          "label": "Action name"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon-only",
+          "label": "Show icon only",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "EO Custom Actions" }]
+}
+{% endschema %}
