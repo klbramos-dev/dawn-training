@@ -4,13 +4,54 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .eo-custom-actions {
+    background: {{ section.settings.background-color }};
+    color: {{ section.settings.text-color }};
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
+  .header-action {
+    display: inline-block;
+    padding: 0px 5px;
+  }
+
+  .header-action span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+
+    .mobile-hidden {
+      display: block;
+    }
   }
 {%- endstyle -%}
+
+{%- if section.blocks.size > 0 -%}
+  <div class="section-{{ section.id }}-padding {% if section.settings.hide-mobile %} mobile-hidden{% endif %}">
+    {% for block in section.blocks %}
+      {%- if block.settings['action-icon'] != blank -%}
+        <div class="header-action">
+          <span>
+            {{ block.settings['action-icon'] | image_url: width: 20 | image_tag }}
+            {%- unless block.settings['icon-only'] -%}
+              {{ block.settings['action-name'] }}
+            {%- endunless -%}
+          </span>
+        </div>
+      {%- endif -%}
+    {% endfor %}
+  </div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -34,6 +75,11 @@
       "type": "color",
       "id": "background-color",
       "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Text Color"
     },
     {
       "type": "select",
