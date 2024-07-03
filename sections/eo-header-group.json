@@ -4,6 +4,34 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_y3AgeA": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping on orders over $49",
+            "link": "#"
+          }
+        },
+        "announcement_PPb8mb": {
+          "type": "announcement",
+          "settings": {
+            "text": "Promotional Announcement",
+            "link": ""
+          }
+        },
+        "announcement_fAEAme": {
+          "type": "announcement",
+          "settings": {
+            "text": "Escape Outdoors",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_y3AgeA",
+        "announcement_PPb8mb",
+        "announcement_fAEAme"
+      ],
       "settings": {
         "color_scheme": "",
         "show_line_separator": true,
