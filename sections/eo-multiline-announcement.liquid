@@ -1,0 +1,154 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .eo-multiline-announcement {
+    background: {{ section.settings.background-color }};
+    line-height: {{ section.settings.line-height }};
+    letter-spacing: {{ section.settings.letter-spacing }};
+    text-align: {{ section.settings.alignment }}
+  }
+
+  .eo-multiline-announcement * {
+    padding: 0;
+    margin: 0;
+    color: {{ section.settings.text-color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if section.settings['main-announcement'] != blank %}
+  <div class="section-{{ section.id }}-padding">
+    <div class="page-width">
+      <h2>
+        <strong>{{ section.settings['main-announcement'] }}</strong>
+      </h2>
+      {% if section.settings['text-content'] != blank %}
+        <p>{{ section.settings['text-content'] }}</p>
+      {% endif %}
+      {% if section.settings['cta-text'] != blank %}
+        <a href="{% if section.settings.cta-link != blank %}{{- section.settings.cta-link -}}{%- else -%}#{%- endif -%}">
+          {{- section.settings['cta-text'] -}}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "EO Multiline Announcement",
+  "class": "eo-multiline-announcement",
+  "disabled_on": {
+    "groups": ["custom.header_eo", "header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "SECTION INFO"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "main-announcement",
+      "label": "Main Announcement"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text-content",
+      "label": "Additional text"
+    },
+    {
+      "type": "text",
+      "id": "cta-text",
+      "label": "Call to Action"
+    },
+    {
+      "type": "url",
+      "id": "cta-link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "header",
+      "content": "STYLING"
+    },
+    {
+      "type": "color",
+      "id": "background-color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Text Color"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "letter-spacing",
+      "label": "Letter Spacing",
+      "options": [
+        {
+          "value": "-1px",
+          "label": "Narrow"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": ".3rem",
+          "label": "Wide"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "range",
+      "id": "line-height",
+      "min": 0.5,
+      "max": 4.0,
+      "step": 0.1,
+      "label": "Line height",
+      "default": 1.0
+    },
+    {
+      "type": "header",
+      "content": "SECTION PADDING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 52
+    }
+  ],
+  "presets": [{ "name": "EO Multiline Announcement" }]
+}
+{% endschema %}
