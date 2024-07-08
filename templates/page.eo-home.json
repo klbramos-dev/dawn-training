@@ -2,13 +2,92 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "eo_multiline_announcement_QTfaBx": {
+      "type": "eo-multiline-announcement",
+      "settings": {
+        "main-announcement": "Father's Day Picks",
+        "text-content": "Top Gifts For Dirt-Covered Dads",
+        "cta-text": "Shop Gifts For Dad",
+        "cta-link": "#",
+        "background-color": "#c2beb1",
+        "text-color": "#000000",
+        "alignment": "center",
+        "letter-spacing": "normal",
+        "line-height": 1.2,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "eo_hierarchy_grid_DdfYfX": {
+      "type": "eo-hierarchy-grid",
+      "blocks": {
+        "card_jNxbit": {
+          "type": "card",
+          "settings": {
+            "card-showcase": true,
+            "card-image": "shopify:\/\/shop_images\/explore-outdoors.png",
+            "color-background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+            "heading": "Embrace the Outdoors and Discover Your Adventure",
+            "subheading": "",
+            "heading-size": "h2",
+            "cta-text": "Shop Now",
+            "cta-link": "#",
+            "cardlink": false
+          }
+        },
+        "card_jiUfyW": {
+          "type": "card",
+          "settings": {
+            "card-showcase": false,
+            "card-image": "shopify:\/\/shop_images\/collection-womens-jackets.jpg",
+            "color-background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+            "heading": "Shop Women's Jackets",
+            "subheading": "Versatility and Fit",
+            "heading-size": "h2",
+            "cta-text": "",
+            "cta-link": "#",
+            "cardlink": false
+          }
+        },
+        "card_hUgdNf": {
+          "type": "card",
+          "settings": {
+            "card-showcase": false,
+            "card-image": "shopify:\/\/shop_images\/collection-mens-accessories.jpg",
+            "color-background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+            "heading": "Shop Men's Accessories",
+            "subheading": "Versatility and Fit",
+            "heading-size": "h2",
+            "cta-text": "",
+            "cta-link": "#",
+            "cardlink": false
+          }
+        }
+      },
+      "block_order": [
+        "card_jNxbit",
+        "card_jiUfyW",
+        "card_hUgdNf"
+      ],
+      "settings": {
+        "background-color": "#ffffff",
+        "grid-gap": 16,
+        "full-screen-grid": false,
+        "showcase-position": "left",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "eo_multiline_announcement_QTfaBx",
+    "eo_hierarchy_grid_DdfYfX"
   ]
 }

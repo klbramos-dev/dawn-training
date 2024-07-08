@@ -8,8 +8,21 @@
     background: {{ section.settings.background-color }};
   }
 
+  .eo-hierarchy-grid * {
+    color: #fff;
+  }
+
   .grid-container {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    gap: {{ section.settings.grid-gap }}px;
+  }
+
+  .grid-card {
+    width: 33%;
+    height: 310px;
+    border: 2px red solid;
   }
 
   @media screen and (min-width: 750px) {
@@ -20,15 +33,20 @@
   }
 {%- endstyle -%}
 
+<style></style>
+
 {% if section.blocks.size > 0 %}
   <div class="section-{{ section.id }}-padding">
-    <div class="grid-container {%- if section.settings.full-screen-grid -%}full-screen{%- else -%}page-width{%- endif -%}">
+    <div class="grid-container {% if section.settings.full-screen-grid %}full-screen{% else %}page-width{% endif %}">
       {% for block in section.blocks %}
         {% if block.settings.heading != blank %}
           {% if block.settings.cardlink %}
             <a href="{{ block.settings.cta-link }}">
           {% endif %}
-          <div class="grid-card {%- if block.settings.card-showcase -%}card-showcase{%- endif -%} {%- if block.settings.card-image != blank -%}bg-image{%- endif -%}">
+          <div
+            class="grid-card {% if block.settings.card-showcase %} card-showcase{%- endif -%}"
+            style="{%- if block.settings.card-image != blank -%}background: url('{{ block.settings.card-image | image_url }}') no-repeat center center / cover; {% else %}  background: {{ block.settings.color-background }}; {%-endif-%}"
+          >
             <p>{{ block.settings.subheading }}</p>
             <h2 class="card-heading {{ block.settings.heading-size }}">{{ block.settings.heading }}</h2>
             <a href="{{ block.settings.cta-link }}">{{ block.settings['cta-text'] }}</a>
