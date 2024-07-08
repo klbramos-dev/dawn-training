@@ -53,13 +53,27 @@
     },
     "eo_custom_actions_Dri7Uk": {
       "type": "eo-custom-actions",
+      "blocks": {
+        "action_JiCkAJ": {
+          "type": "action",
+          "settings": {
+            "action-icon": "shopify:\/\/shop_images\/map-pin-white.svg",
+            "action-name": "Store Locator",
+            "icon-only": false
+          }
+        }
+      },
+      "block_order": [
+        "action_JiCkAJ"
+      ],
       "settings": {
         "hide-mobile": true,
-        "background-color": "",
+        "background-color": "#121212",
+        "text-color": "#ffffff",
         "actions-position": "right",
         "actions-sizing": "medium",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "eo_custom_header_td8pem": {
