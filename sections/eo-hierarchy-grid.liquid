@@ -1,0 +1,202 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .eo-hierarchy-grid {
+    background: {{ section.settings.background-color }};
+  }
+
+  .grid-container {
+    display: grid;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if section.blocks.size > 0 %}
+  <div class="section-{{ section.id }}-padding">
+    <div class="grid-container {%- if section.settings.full-screen-grid -%}full-screen{%- else -%}page-width{%- endif -%}">
+      {% for block in section.blocks %}
+        {% if block.settings.heading != blank %}
+          {% if block.settings.cardlink %}
+            <a href="{{ block.settings.cta-link }}">
+          {% endif %}
+          <div class="grid-card {%- if block.settings.card-showcase -%}card-showcase{%- endif -%} {%- if block.settings.card-image != blank -%}bg-image{%- endif -%}">
+            <p>{{ block.settings.subheading }}</p>
+            <h2 class="card-heading {{ block.settings.heading-size }}">{{ block.settings.heading }}</h2>
+            <a href="{{ block.settings.cta-link }}">{{ block.settings['cta-text'] }}</a>
+          </div>
+          {% if block.settings.cardlink %}
+            </a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "EO Hierarchy Grid",
+  "class": "eo-hierarchy-grid",
+  "disabled_on": {
+    "groups": ["custom.header_eo", "header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "background-color",
+      "label": "Background Color"
+    },
+    {
+      "type": "range",
+      "id": "grid-gap",
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Grid Gap",
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "full-screen-grid",
+      "label": "Full screen width",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "showcase-position",
+      "label": "Showcase card position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "SECTION PADDING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 52
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Grid Card",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "card-showcase",
+          "label": "Showcase card",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "card-image",
+          "label": "Card Image",
+          "info": "If no image is selected, card will default to color background."
+        },
+        {
+          "type": "color_background",
+          "id": "color-background",
+          "label": "Color Background",
+          "default": "linear-gradient(#ffffff, #000000)"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "select",
+          "id": "heading-size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "text",
+          "id": "cta-text",
+          "label": "Call to Action"
+        },
+        {
+          "type": "url",
+          "id": "cta-link",
+          "label": "CTA Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "cardlink",
+          "label": "Apply link to entire card",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "EO Hierarchy Grid" }]
+}
+{% endschema %}
