@@ -1,0 +1,141 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <h2>{{ section.settings.heading | upcase }}</h2>
+    {% unless section.blocks.size == 0 %}
+      <div class="logos-container">
+        {% for block in section.blocks %}
+          {% if block.settings.logo != blank or block.settings.name != blank %}
+            {{ block.settings.logo | image_url: height: 100 | image_tag }}
+            {%- unless block.settings['hide-name'] or block.settings.logo == blank -%}
+              <p>{{ block.settings.name }}</p>
+            {%- endunless -%}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endunless %}
+    <a href="{{ section.settings.cta-link }}">{{ section.settings['cta-text'] }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "EO Display Logos",
+  "class": "eo-display-logos",
+  "disabled_on": {
+    "groups": ["custom.header_eo", "header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "SECTION INFO"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "cta-text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta-link",
+      "label": "CTA link"
+    },
+    {
+      "type": "header",
+      "content": "STYLING"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "linear-gradient(#ffffff, #000000)"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "cta-text-color",
+      "label": "CTA Text color"
+    },
+    {
+      "type": "color_background",
+      "id": "cta-background",
+      "label": "CTA Background color"
+    },
+    {
+      "type": "header",
+      "content": "SECTION PADDING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide-name",
+          "label": "Hide name",
+          "default": true,
+          "info": "Name will be displayed by default if image is not found"
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "EO Display Logos" }]
+}
+{% endschema %}
