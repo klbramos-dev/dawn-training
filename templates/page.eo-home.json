@@ -96,6 +96,36 @@
     "collection_list_zt6yEM": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_WC9GXR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-apparel-accessories"
+          }
+        },
+        "featured_collection_bLf8kM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-apparel-accessories"
+          }
+        },
+        "featured_collection_CrirVa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "kids-apparel-accesories"
+          }
+        },
+        "featured_collection_k3aKAc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "travel"
+          }
+        },
+        "featured_collection_8U9r7E": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "featured"
+          }
+        },
         "featured_collection_QtEDNc": {
           "type": "featured_collection",
           "settings": {
@@ -113,26 +143,17 @@
           "settings": {
             "collection": "out-of-stock"
           }
-        },
-        "featured_collection_8U9r7E": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "featured"
-          }
-        },
-        "featured_collection_JVd4zJ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "frontpage"
-          }
         }
       },
       "block_order": [
+        "featured_collection_WC9GXR",
+        "featured_collection_bLf8kM",
+        "featured_collection_CrirVa",
+        "featured_collection_k3aKAc",
+        "featured_collection_8U9r7E",
         "featured_collection_QtEDNc",
         "featured_collection_3Cw9hV",
-        "featured_collection_Twh8LN",
-        "featured_collection_8U9r7E",
-        "featured_collection_JVd4zJ"
+        "featured_collection_Twh8LN"
       ],
       "settings": {
         "title": "Top Categories",
