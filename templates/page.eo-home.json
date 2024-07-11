@@ -120,12 +120,106 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "collection_list_zt6yEM": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_QtEDNc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "indoor"
+          }
+        },
+        "featured_collection_3Cw9hV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "outdoor"
+          }
+        },
+        "featured_collection_Twh8LN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "out-of-stock"
+          }
+        },
+        "featured_collection_8U9r7E": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "featured"
+          }
+        },
+        "featured_collection_JVd4zJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_QtEDNc",
+        "featured_collection_3Cw9hV",
+        "featured_collection_Twh8LN",
+        "featured_collection_8U9r7E",
+        "featured_collection_JVd4zJ"
+      ],
+      "settings": {
+        "title": "Top Categories",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_j6n44C": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_x3UEig": {
+          "type": "heading",
+          "settings": {
+            "heading": "Outdoor Fashion & Lifestyle Clothing Brands",
+            "heading_size": "h1"
+          }
+        },
+        "text_cX6Eyb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We offer an extensive range of hand-selected outdoor fashion and curated  products for active enthusiasts at Escape Outdoors! Our incredible  outdoor lifestyle clothing brand collections have styles everyone will  love. We have a phenomenal selection of functional, high-quality apparel  and accessories for men, women, and kids. Discover everything from  trendy jackets and coats to stylish tops and bottoms.<\/p><p>At Escape Outdoors, we have the latest designs from Arc’Teryx, Canada  Goose, Patagonia, The North Face, and many more outdoor lifestyle  clothing brands you can select from. Explore our full assortment of  outdoor fashion today and find the perfect piece for your wardrobe!<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_x3UEig",
+        "text_cX6Eyb"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/outdoor-fashion-lifestyle.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "eo_multiline_announcement_QTfaBx",
     "eo_hierarchy_grid_DdfYfX",
-    "eo_display_logos_mmHXze"
+    "eo_display_logos_mmHXze",
+    "collection_list_zt6yEM",
+    "image_with_text_j6n44C"
   ]
 }
