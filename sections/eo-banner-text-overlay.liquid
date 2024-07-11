@@ -175,22 +175,12 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "t:sections.image-banner.settings.image.label"
+      "label": "Banner image"
     },
     {
       "type": "image_picker",
       "id": "image_2",
-      "label": "t:sections.image-banner.settings.image_2.label"
-    },
-    {
-      "type": "range",
-      "id": "image_overlay_opacity",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
-      "default": 0
+      "label": "Image 2"
     },
     {
       "type": "select",
@@ -198,24 +188,23 @@
       "options": [
         {
           "value": "adapt",
-          "label": "t:sections.image-banner.settings.image_height.options__1.label"
+          "label": "Adapt to first image"
         },
         {
           "value": "small",
-          "label": "t:sections.image-banner.settings.image_height.options__2.label"
+          "label": "Small"
         },
         {
           "value": "medium",
-          "label": "t:sections.image-banner.settings.image_height.options__3.label"
+          "label": "Medium"
         },
         {
           "value": "large",
-          "label": "t:sections.image-banner.settings.image_height.options__4.label"
+          "label": "Large"
         }
       ],
       "default": "medium",
-      "label": "t:sections.image-banner.settings.image_height.label",
-      "info": "t:sections.image-banner.settings.image_height.info"
+      "label": "Banner height",
     },
     {
       "type": "select",
@@ -265,6 +254,16 @@
       "type": "color_background",
       "id": "image-overlay",
       "label": "Image overlay",
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Image overlay opacity",
+      "default": 0
     },
     {
       "type": "checkbox",
