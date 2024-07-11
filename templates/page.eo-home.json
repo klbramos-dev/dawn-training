@@ -93,34 +93,6 @@
         "padding_bottom": 32
       }
     },
-    "eo_display_logos_mmHXze": {
-      "type": "eo-display-logos",
-      "blocks": {
-        "logo_RGRxiR": {
-          "type": "logo",
-          "repeater": "{{ page.metafields.custom.brands.value }}",
-          "settings": {
-            "logo": "{{ block.repeater.logo.value }}",
-            "name": "{{ block.repeater.name.value }}",
-            "hide-name": true
-          }
-        }
-      },
-      "block_order": [
-        "logo_RGRxiR"
-      ],
-      "settings": {
-        "heading": "Discover the Best Outdoors Fashion Brands",
-        "cta-text": "View All",
-        "cta-link": "#",
-        "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
-        "text-color": "",
-        "cta-text-color": "",
-        "cta-background": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "collection_list_zt6yEM": {
       "type": "collection-list",
       "blocks": {
@@ -212,14 +184,60 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "eo_display_logos_mmHXze": {
+      "type": "eo-display-logos",
+      "blocks": {
+        "logo_RGRxiR": {
+          "type": "logo",
+          "repeater": "{{ page.metafields.custom.brands.value }}",
+          "settings": {
+            "logo": "{{ block.repeater.logo.value }}",
+            "name": "{{ block.repeater.name.value }}",
+            "hide-name": true
+          }
+        }
+      },
+      "block_order": [
+        "logo_RGRxiR"
+      ],
+      "settings": {
+        "heading": "Discover the Best Outdoors Fashion Brands",
+        "cta-text": "View All",
+        "cta-link": "#",
+        "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+        "text-color": "",
+        "cta-text-color": "",
+        "cta-background": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_blog_xDL6qK": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Latest Stories",
+        "heading_size": "h1",
+        "blog": "stories",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "eo_multiline_announcement_QTfaBx",
     "eo_hierarchy_grid_DdfYfX",
-    "eo_display_logos_mmHXze",
     "collection_list_zt6yEM",
-    "image_with_text_j6n44C"
+    "image_with_text_j6n44C",
+    "eo_display_logos_mmHXze",
+    "featured_blog_xDL6qK"
   ]
 }
