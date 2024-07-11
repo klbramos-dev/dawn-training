@@ -235,6 +235,7 @@
         "text_AREpaf"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/banner-man-running-up-a-mountain.png",
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "image-overlay": "",
