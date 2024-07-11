@@ -206,6 +206,43 @@
         "padding_bottom": 36
       }
     },
+    "eo_banner_text_overlay_m4nMGb": {
+      "type": "eo-banner-text-overlay",
+      "blocks": {
+        "text_aEQYGT": {
+          "type": "text",
+          "settings": {
+            "text-line": "Discover the best",
+            "text-color": "#000000",
+            "text_size": "h1",
+            "alignment": "left",
+            "line_height": 1
+          }
+        },
+        "text_AREpaf": {
+          "type": "text",
+          "settings": {
+            "text-line": "fashion trends",
+            "text-color": "#000000",
+            "text_size": "h1",
+            "alignment": "left",
+            "line_height": 1
+          }
+        }
+      },
+      "block_order": [
+        "text_aEQYGT",
+        "text_AREpaf"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "image-overlay": "",
+        "image_overlay_opacity": 0,
+        "show_text_background": false,
+        "text-background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)"
+      }
+    },
     "eo_display_logos_mmHXze": {
       "type": "eo-display-logos",
       "blocks": {
@@ -258,6 +295,7 @@
     "eo_hierarchy_grid_DdfYfX",
     "collection_list_zt6yEM",
     "image_with_text_j6n44C",
+    "eo_banner_text_overlay_m4nMGb",
     "eo_display_logos_mmHXze",
     "featured_blog_xDL6qK"
   ]
