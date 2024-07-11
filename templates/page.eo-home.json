@@ -92,11 +92,40 @@
         "padding_top": 32,
         "padding_bottom": 32
       }
+    },
+    "eo_display_logos_mmHXze": {
+      "type": "eo-display-logos",
+      "blocks": {
+        "logo_RGRxiR": {
+          "type": "logo",
+          "repeater": "{{ page.metafields.custom.brands.value }}",
+          "settings": {
+            "logo": "{{ block.repeater.logo.value }}",
+            "name": "{{ block.repeater.name.value }}",
+            "hide-name": true
+          }
+        }
+      },
+      "block_order": [
+        "logo_RGRxiR"
+      ],
+      "settings": {
+        "heading": "Discover the Best Outdoors Fashion Brands",
+        "cta-text": "View All",
+        "cta-link": "#",
+        "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+        "text-color": "",
+        "cta-text-color": "",
+        "cta-background": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "eo_multiline_announcement_QTfaBx",
-    "eo_hierarchy_grid_DdfYfX"
+    "eo_hierarchy_grid_DdfYfX",
+    "eo_display_logos_mmHXze"
   ]
 }
