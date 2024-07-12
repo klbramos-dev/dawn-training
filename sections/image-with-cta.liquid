@@ -1,0 +1,166 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "EO Display Logos",
+  "class": "eo-display-logos",
+  "disabled_on": {
+    "groups": ["custom.header_eo", "header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "First image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second image"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_images_on_mobile",
+      "default": true,
+      "label": "Stack images on mobile"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Image overlay opacity",
+      "default": 0
+    },
+    {
+      "type": "color_background",
+      "id": "color-overlay",
+      "label": "Image overlay",
+      "default": "linear-gradient(#ffffff, #000000)"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to first image"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium",
+      "label": "Banner height"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top center"
+        },
+        {
+          "value": "top-right",
+          "label": "Top right"
+        },
+        {
+          "value": "middle-left",
+          "label": "Middle left"
+        },
+        {
+          "value": "middle-center",
+          "label": "Middle center"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "middle-center",
+      "label": "Text content position"
+    },
+    {
+      "type": "color_background",
+      "id": "text-container-bg",
+      "label": "Text color background",
+      "default": "linear-gradient(#ffffff, #000000)"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "text-line",
+      "name": "Text line",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text-line",
+          "label": "Text"
+        },
+        {
+          "type": "text_alignment",
+          "id": "text-alignment",
+          "label": "Text alignment",
+          "default": "left"
+        },
+        {
+          "type": "color",
+          "id": "text-color",
+          "label": "Text color"
+        },
+        {
+          "type": "range",
+          "id": "text_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
